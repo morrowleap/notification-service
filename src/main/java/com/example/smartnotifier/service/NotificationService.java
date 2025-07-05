@@ -2,6 +2,9 @@ package com.example.smartnotifier.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class NotificationService {
 
 	public void sendAllNotifications(Event event, List<String> channels) {
@@ -92,6 +95,7 @@ public class NotificationService {
 	}
 
 	// Event placeholder
+	@lombok.Data
 	public static class Event {
 		private String type;
 		private String payload;
@@ -100,34 +104,5 @@ public class NotificationService {
 		private String recipientPhone;
 		private String deviceToken;
 		private String slackChannelId;
-
-		// getters and setters omitted for brevity
-		public String getType() {
-			return type;
-		}
-
-		public String getPayload() {
-			return payload;
-		}
-
-		public String getRecipientName() {
-			return recipientName;
-		}
-
-		public String getRecipientEmail() {
-			return recipientEmail;
-		}
-
-		public String getRecipientPhone() {
-			return recipientPhone;
-		}
-
-		public String getDeviceToken() {
-			return deviceToken;
-		}
-
-		public String getSlackChannelId() {
-			return slackChannelId;
-		}
 	}
 }

@@ -2,10 +2,14 @@ package com.example.smartnotifier;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.smartnotifier.service.NotificationService;
@@ -13,6 +17,13 @@ import com.example.smartnotifier.service.NotificationService;
 @SpringBootApplication
 @RestController
 public class SmartNotifierApplication {
+
+	private final NotificationService notificationService;
+
+	@Autowired
+	public SmartNotifierApplication(NotificationService notificationService) {
+		this.notificationService = notificationService;
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmartNotifierApplication.class, args);
@@ -24,7 +35,9 @@ public class SmartNotifierApplication {
 	}
 
 	@PostMapping("/event")
-	public void sendAllNotifications(NotificationService.Event event, List<String> channels) {
-
+	public ResponseEntity<Void> sendAllNotifications(@RequestBody NotificationService.Event event,
+			@RequestParam("channels") List<String> channels) {
+		notificationService.sendAllNotifications(event, channels);
+		return ResponseEntity.accepted().build();
 	}
 }
