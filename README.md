@@ -70,3 +70,10 @@ curl --location 'http://localhost:8080/event?channels=EMAIL%2CSMS%2CPUSH%2CSLACK
 }'
 ```
 
+## Design Patterns
+
+This project demonstrates several design patterns:
+
+- **Strategy:** `ChannelDispatcher` selects a `Notifier` strategy (EmailNotifier, SmsNotifier, etc.) to deliver messages.
+- **Facade:** `NotificationService` exposes a simple method that hides the dispatcher and channel details.
+- **Template Method & Command:** `RetryHandler` defines the retry algorithm while each `RetriableTask` command supplies the action to retry.
