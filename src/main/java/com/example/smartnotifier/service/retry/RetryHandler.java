@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
  * {@link RetriableTask} supplies the step that can vary.
  */
 public class RetryHandler {
-        @FunctionalInterface
-        // Command representing the operation to retry
-        public interface RetriableTask {
-                void run() throws Exception;
-        }
+	@FunctionalInterface
+	// Command representing the operation to retry
+	public interface RetriableTask {
+		void run() throws Exception;
+	}
 
 	/**
 	 * Executes the task up to {@code maxAttempts} times. Returns the attempt count

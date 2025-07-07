@@ -12,16 +12,16 @@ import com.example.smartnotifier.service.dispatch.ChannelDispatcher;
 // Acts as a simple facade over the dispatcher to send events to multiple channels
 public class NotificationService {
 
-        private final ChannelDispatcher dispatcher;
+	private final ChannelDispatcher dispatcher;
 
-        @Autowired
-        public NotificationService(ChannelDispatcher dispatcher) {
-                this.dispatcher = dispatcher;
-        }
+	@Autowired
+	public NotificationService(ChannelDispatcher dispatcher) {
+		this.dispatcher = dispatcher;
+	}
 
 	public void sendAllNotifications(Event event, List<String> channels) {
-                for (String channel : channels) {
-                        dispatcher.dispatch(event, channel);
-                }
+		for (String channel : channels) {
+			dispatcher.dispatch(event, channel);
+		}
 	}
 }

@@ -12,30 +12,30 @@ import com.example.smartnotifier.service.send.PushSender;
 @Component
 // Concrete strategy that handles push notifications
 public class PushNotifier implements Notifier {
-    private final PushFormatter formatter;
-    private final PushSender sender;
-    private final NotificationLogger logger;
+	private final PushFormatter formatter;
+	private final PushSender sender;
+	private final NotificationLogger logger;
 
-    @Autowired
-    public PushNotifier(PushFormatter formatter, PushSender sender, NotificationLogger logger) {
-        this.formatter = formatter;
-        this.sender = sender;
-        this.logger = logger;
-    }
+	@Autowired
+	public PushNotifier(PushFormatter formatter, PushSender sender, NotificationLogger logger) {
+		this.formatter = formatter;
+		this.sender = sender;
+		this.logger = logger;
+	}
 
-    @Override
-    public String getChannel() {
-        return "PUSH";
-    }
+	@Override
+	public String getChannel() {
+		return "PUSH";
+	}
 
-    @Override
-    public void notify(Event event) {
-        try {
-            PushMessage message = formatter.format(event);
-            sender.send(event.getDeviceToken(), message);
-            logger.success(getChannel(), event, 1);
-        } catch (Exception e) {
-            logger.error(getChannel(), e, 1);
-        }
-    }
+	@Override
+	public void notify(Event event) {
+		try {
+			PushMessage message = formatter.format(event);
+			sender.send(event.getDeviceToken(), message);
+			logger.success(getChannel(), event, 1);
+		} catch (Exception e) {
+			logger.error(getChannel(), e, 1);
+		}
+	}
 }
