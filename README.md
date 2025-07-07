@@ -36,9 +36,6 @@ Break your work into six incremental phases—each with a concrete user story th
 * Refactor the dispatcher to use polymorphism (via an interface or abstract class) for the channel handling logic.
 * Ensure that new channels can be added by creating new classes implementing the `Notifier` interface, thus adhering to the Open/Closed Principle.
 
-
-Apologies for the misunderstanding. Here's the original content, just formatted properly:
-
 #### Phase 4 – Explore LSP Violations
 
 **Story 4**
@@ -50,12 +47,21 @@ This should now reflect the original content with improved formatting.
 
 Note: I have not implemented this yet, as it is too complicated right now.
 
+Here’s the formatted version of Phase 5 with the note added:
+
+#### Phase 5 – Witness Class Explosion
+
+**Story 5**
+*As a developer, I want separate subclasses for every “channel + retry + logging” combo so that I experience the combinatorial explosion of tiny classes.*
+
+**Note:** I have not implemented this yet, as it is too complicated right now.
 
 
 ## Requirements
 
 The project is built with **JDK 21** via the Gradle toolchain. Make sure JDK 21
 is available on your machine.
+
 
 ## Building and Testing
 
@@ -66,6 +72,7 @@ Run the Gradle wrapper from the project root:
 ./gradlew test
 ```
 
+
 ## Running the Application
 
 Start the Spring Boot application with:
@@ -75,6 +82,7 @@ Start the Spring Boot application with:
 ```
 
 The server listens on port `8080` by default.
+
 
 ### Example requests
 
@@ -99,6 +107,7 @@ curl --location 'http://localhost:8080/event?channels=EMAIL%2CSMS%2CPUSH%2CSLACK
   "slackChannelId": "C12345678"
 }'
 ```
+
 
 ## Design Patterns
 
