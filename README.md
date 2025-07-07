@@ -43,17 +43,15 @@ Break your work into six incremental phases—each with a concrete user story th
 
 Refactor to ensure all notifiers honor the same calling contract (e.g. throw on unsupported features).
 
-This should now reflect the original content with improved formatting.
-
 **Note:** I have not implemented this yet, as it is too complicated right now.
+
 
 #### Phase 5 – Witness Class Explosion
 
 **Story 5**
 *As a developer, I want separate subclasses for every “channel + retry + logging” combo so that I experience the combinatorial explosion of tiny classes.*
 
-**Note:** I have not implemented this yet, as it is too complicated right now.
-
+https://github.com/morrowleap/smart-notifier/pull/5 This rejected PR, is an example of class-explosion.
 
 ## Requirements
 
