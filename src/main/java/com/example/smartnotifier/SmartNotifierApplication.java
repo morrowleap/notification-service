@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,13 +19,13 @@ import com.example.smartnotifier.service.NotificationService;
 @RestController
 public class SmartNotifierApplication {
 
-       private final NotificationService notificationService;
+	private final NotificationService notificationService;
 
-       @Autowired
-       public SmartNotifierApplication(NotificationService notificationService) {
-               this.notificationService = notificationService;
-       }
-
+	@Autowired
+	public SmartNotifierApplication(NotificationService notificationService) {
+		this.notificationService = notificationService;
+	}
+  
 	public static void main(String[] args) {
 		SpringApplication.run(SmartNotifierApplication.class, args);
 	}

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.example.smartnotifier.model.Event;
 import com.example.smartnotifier.service.format.EmailFormatter;
 import com.example.smartnotifier.service.format.EmailFormatter.EmailMessage;
