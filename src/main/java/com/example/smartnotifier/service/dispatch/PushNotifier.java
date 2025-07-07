@@ -10,6 +10,7 @@ import com.example.smartnotifier.service.logging.NotificationLogger;
 import com.example.smartnotifier.service.send.PushSender;
 
 @Component
+// Concrete strategy that handles push notifications
 public class PushNotifier implements Notifier {
     private final PushFormatter formatter;
     private final PushSender sender;

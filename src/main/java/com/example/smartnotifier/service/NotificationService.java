@@ -9,6 +9,7 @@ import com.example.smartnotifier.model.Event;
 import com.example.smartnotifier.service.dispatch.ChannelDispatcher;
 
 @Service
+// Acts as a simple facade over the dispatcher to send events to multiple channels
 public class NotificationService {
 
         private final ChannelDispatcher dispatcher;

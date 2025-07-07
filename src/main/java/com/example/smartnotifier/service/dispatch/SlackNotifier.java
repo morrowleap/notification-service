@@ -9,6 +9,7 @@ import com.example.smartnotifier.service.logging.NotificationLogger;
 import com.example.smartnotifier.service.send.SlackSender;
 
 @Component
+// Concrete strategy that handles Slack notifications
 public class SlackNotifier implements Notifier {
     private final SlackFormatter formatter;
     private final SlackSender sender;

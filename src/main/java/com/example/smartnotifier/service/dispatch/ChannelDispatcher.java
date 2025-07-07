@@ -16,8 +16,9 @@ public class ChannelDispatcher {
 
     @Autowired
     public ChannelDispatcher(List<Notifier> notifiers) {
-        // Spring injects all beans that implement the Notifier interface
-        // which allows adding new channels without modifying this class
+        // Spring injects all beans that implement the Notifier interface, each
+        // representing a concrete Strategy. This map acts as a registry so the
+        // dispatcher (the context) can select the appropriate strategy at runtime.
         this.notifierMap = notifiers.stream()
                 .collect(Collectors.toMap(Notifier::getChannel, n -> n));
     }

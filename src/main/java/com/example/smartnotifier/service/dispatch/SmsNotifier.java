@@ -9,6 +9,7 @@ import com.example.smartnotifier.service.logging.NotificationLogger;
 import com.example.smartnotifier.service.send.SmsSender;
 
 @Component
+// Concrete strategy that handles SMS notifications
 public class SmsNotifier implements Notifier {
     private final SmsFormatter formatter;
     private final SmsSender sender;
