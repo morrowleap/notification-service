@@ -50,7 +50,12 @@ This should now reflect the original content with improved formatting.
 
 Note: I have not implemented this yet, as it is too complicated right now.
 
+#### Phase 5 – Witness Class Explosion
 
+**Story 5**
+*As a developer, I want separate subclasses for every "channel + retry + logging" combo so that I experience the combinatorial explosion of tiny classes.*
+
+The project now contains 16 notifier classes under `service/dispatch/combos` to illustrate how quickly subclasses multiply when cross-cutting concerns like retry logic and logging are baked into concrete implementations.
 
 ## Requirements
 
