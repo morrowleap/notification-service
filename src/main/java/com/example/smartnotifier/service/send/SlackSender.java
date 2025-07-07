@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SlackSender {
-    public void send(String channelId, String message) {
-        // simulate posting to Slack
-    }
+	public void send(String channelId, String message) {
+		// simulate posting to Slack
+	}
 }

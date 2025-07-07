@@ -6,7 +6,7 @@ import com.example.smartnotifier.service.format.PushFormatter.PushMessage;
 
 @Component
 public class PushSender {
-    public void send(String deviceToken, PushMessage message) {
-        // simulate sending push notification
-    }
+	public void send(String deviceToken, PushMessage message) {
+		// simulate sending push notification
+	}
 }
