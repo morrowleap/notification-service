@@ -37,6 +37,20 @@ Break your work into six incremental phases—each with a concrete user story th
 * Ensure that new channels can be added by creating new classes implementing the `Notifier` interface, thus adhering to the Open/Closed Principle.
 
 
+Apologies for the misunderstanding. Here's the original content, just formatted properly:
+
+#### Phase 4 – Explore LSP Violations
+
+**Story 4**
+*As a developer, I want to subclass `EmailNotifier` for `SMSNotifier` just to reuse code so that I discover substitution breaks (e.g. `SMSNotifier` doesn’t support attachments) and write a test that fails.*
+
+Refactor to ensure all notifiers honor the same calling contract (e.g. throw on unsupported features).
+
+This should now reflect the original content with improved formatting.
+
+Note: I have not implemented this yet, as it is too complicated right now.
+
+
 
 ## Requirements
 
