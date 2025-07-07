@@ -11,6 +11,7 @@ import com.example.smartnotifier.service.retry.RetryHandler;
 import com.example.smartnotifier.service.send.EmailSender;
 
 @Component
+// Concrete strategy that handles email notifications
 public class EmailNotifier implements Notifier {
     private final EmailFormatter formatter;
     private final EmailSender sender;
@@ -35,6 +36,8 @@ public class EmailNotifier implements Notifier {
     public void notify(Event event) {
         try {
             EmailMessage email = formatter.format(event);
+            // Command object passed to RetryHandler which executes the task using
+            // the Template Method pattern
             int attempts = retryHandler.execute(new RetryHandler.RetriableTask() {
                 @Override
                 public void run() throws Exception {

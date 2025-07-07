@@ -3,11 +3,17 @@ package com.example.smartnotifier.service.retry;
 import org.springframework.stereotype.Component;
 
 @Component
+/**
+ * Implements the Template Method pattern for retrying operations. The
+ * {@code execute} method defines the algorithm skeleton while the provided
+ * {@link RetriableTask} supplies the step that can vary.
+ */
 public class RetryHandler {
-	@FunctionalInterface
-	public interface RetriableTask {
-		void run() throws Exception;
-	}
+        @FunctionalInterface
+        // Command representing the operation to retry
+        public interface RetriableTask {
+                void run() throws Exception;
+        }
 
 	/**
 	 * Executes the task up to {@code maxAttempts} times. Returns the attempt count
