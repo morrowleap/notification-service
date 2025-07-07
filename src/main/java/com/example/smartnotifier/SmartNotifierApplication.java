@@ -35,7 +35,7 @@ public class SmartNotifierApplication {
 	}
 
 	@PostMapping("/event")
-	public void sendAllNotifications(@RequestBody Event event, @RequestParam List<String> channels) {
+	public void sendAllNotifications(@RequestBody Event event, @RequestParam("channels") List<String> channels) {
 		notificationService.sendAllNotifications(event, channels);
 	}
 }
