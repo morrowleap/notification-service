@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.smartnotifier.model.Event;
 import com.example.smartnotifier.service.NotificationService;
 
 @SpringBootApplication
@@ -24,7 +25,7 @@ public class SmartNotifierApplication {
 	public SmartNotifierApplication(NotificationService notificationService) {
 		this.notificationService = notificationService;
 	}
-
+  
 	public static void main(String[] args) {
 		SpringApplication.run(SmartNotifierApplication.class, args);
 	}
@@ -34,10 +35,9 @@ public class SmartNotifierApplication {
 		return "OK";
 	}
 
-	@PostMapping("/event")
-	public ResponseEntity<Void> sendAllNotifications(@RequestBody NotificationService.Event event,
-			@RequestParam("channels") List<String> channels) {
-		notificationService.sendAllNotifications(event, channels);
-		return ResponseEntity.accepted().build();
-	}
+       @PostMapping("/event")
+       public void sendAllNotifications(@RequestBody Event event,
+                       @RequestParam List<String> channels) {
+               notificationService.sendAllNotifications(event, channels);
+       }
 }

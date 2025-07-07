@@ -3,7 +3,6 @@
 A pluggable notification service that takes incoming “events” (e.g. user signup, password reset, system alert) and dispatches messages via one or more channels (email, SMS, push, Slack, etc.).
 
 
-
 ### Roadmap & User Stories
 Break your work into six incremental phases—each with a concrete user story that introduces one concept:
 
