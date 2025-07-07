@@ -45,9 +45,7 @@ Refactor to ensure all notifiers honor the same calling contract (e.g. throw on 
 
 This should now reflect the original content with improved formatting.
 
-Note: I have not implemented this yet, as it is too complicated right now.
-
-Here’s the formatted version of Phase 5 with the note added:
+**Note:** I have not implemented this yet, as it is too complicated right now.
 
 #### Phase 5 – Witness Class Explosion
 
