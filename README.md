@@ -53,6 +53,24 @@ Refactor to ensure all notifiers honor the same calling contract (e.g. throw on 
 
 https://github.com/morrowleap/smart-notifier/pull/5 This rejected PR, is an example of class-explosion.
 
+
+#### Phase 6 – Apply Composition Over Inheritance
+
+**Story 6**  
+*As a developer, I want wrapper/decorator classes like `RetryingNotifier` and `LoggingNotifier` so that I can compose behavior at runtime and avoid endless subclasses.*
+
+- **Create Decorator Classes**: 
+   - `RetryingNotifier`: Wraps a base `Notifier` to add retry functionality.
+   - `LoggingNotifier`: Wraps a base `Notifier` to add logging functionality.
+
+- **Composing the Notifiers**:
+   ```java
+   Notifier email = new EmailNotifier(config);
+   Notifier withRetry = new RetryingNotifier(email, 3); // Retry 3 times
+   Notifier logged = new LoggingNotifier(withRetry, logger);
+   
+https://github.com/morrowleap/smart-notifier/pull/6 This PR, shows separation of concerns and class composition
+
 ## Requirements
 
 The project is built with **JDK 21** via the Gradle toolchain. Make sure JDK 21
